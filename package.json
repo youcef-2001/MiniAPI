@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm install express body-parser nodemon  ; nodemon app.js"
+    "start": "npm install express body-parser nodemon  ; nodemon app.js",
+    "build": "netlify-lambda build functions",
+    "deploy": "netlify deploy --prod"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,9 @@
   "dependencies": {
     "body-parser": "^1.20.3",
     "express": "^4.21.2",
-    "nodemon": "^3.1.9"
+    "netlify-cli": "^18.0.0",
+    "netlify-lambda": "^2.0.16",
+    "nodemon": "^3.1.9",
+    "serverless-http": "^3.2.0"
   }
 }

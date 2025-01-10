@@ -1,2 +1,3 @@
 
 npm install express body-parser nodemon
+npm install netlify-cli netlify-lambda serverless-http

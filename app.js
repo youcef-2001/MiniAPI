@@ -6,8 +6,20 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000;
 
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello, World!' });
+app.get('/', (req, res) => {
+  const accountVerificationReportId = req.query.account_verification_report_id;
+  
+  if (!accountVerificationReportId) {
+    return res.status(400).send('Missing account_verification_report_id parameter');
+  }
+
+  const htmlResponse =  {
+    "account_verification_report_id": accountVerificationReportId,
+    "status": "completed",
+  };
+
+  res.setHeader('Content-Type', 'application/json');
+  res.send(htmlResponse);
 });
 
 app.listen(port, () => {

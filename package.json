@@ -1,0 +1,24 @@
+{
+  "name": "miniapi",
+  "version": "1.0.0",
+  "description": "A web server to handle some apis ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server "
+  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youcef-2001/MiniAPI.git"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "Youcef BALEH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youcef-2001/MiniAPI/issues"
+  },
+  "homepage": "https://github.com/youcef-2001/MiniAPI#readme"
+}

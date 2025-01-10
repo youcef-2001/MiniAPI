@@ -3,13 +3,9 @@ const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
 const app = express();
 
-
-
 app.use(bodyParser.json());
 
-const port = process.env.PORT || 8080;
-
-app.get('/', (req, res) => {
+app.get('/.netlify/functions/api', (req, res) => {
   const accountVerificationReportId = req.query.account_verification_report_id;
   
   if (!accountVerificationReportId) {
@@ -32,11 +28,5 @@ app.get('/', (req, res) => {
   res.send(htmlResponse);
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
-
-// Your existing routes and middleware here
-
+// Export the serverless function
 module.exports.handler = serverless(app);

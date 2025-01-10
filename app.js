@@ -13,12 +13,19 @@ app.get('/', (req, res) => {
     return res.status(400).send('Missing account_verification_report_id parameter');
   }
 
-  const htmlResponse =  {
-    "account_verification_report_id": accountVerificationReportId,
-    "status": "completed",
-  };
+  const htmlResponse = `
+    <html>
+      <head>
+        <title>Account Verification Report</title>
+      </head>
+      <body>
+        <h1>Account Verification Report</h1>
+        <p>Account Verification Report ID: ${accountVerificationReportId}</p>
+      </body>
+    </html>
+  `
 
-  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Type', 'text/html');
   res.send(htmlResponse);
 });
 
